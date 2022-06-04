@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: 'nginx:latest'
+    volumes:
+      - './nginx/conf:/etc/nginx/'
+      - './../frontend:/etc/nginx/html/'
+    ports:
+      - '80:80'
