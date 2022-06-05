@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+    <ng-container *ngFor="let obj of (inputs$ | async)">
+        <input-container
+            [form]="form"
+            [type]="obj.config.type"
+            [name]="obj.config.name"
+            [placeholder]="obj.config.placeholder">
+        </input-container>
+    </ng-container>
+
+    <button type="button" [disabled]="disabled" (click)="save()">{{ saveText }}</button>
+</form>

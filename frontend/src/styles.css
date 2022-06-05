@@ -1,0 +1,25 @@
+footer {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.container {
+    display: block;
+}
+
+.centered {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+}

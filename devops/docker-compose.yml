@@ -1,5 +1,12 @@
 version: '3.9'
 
+networks:
+  owofin:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/4
+
 services:
   nginx:
     image: 'nginx:latest'
@@ -8,3 +15,31 @@ services:
       - './../frontend:/etc/nginx/html/'
     ports:
       - '80:80'
+    # links:
+      # - 'backend:backend'
+    networks:
+      owofin:
+        ipv4_address: 192.168.10.2
+
+#   backend:
+#     build:
+#       context: './backend'
+#     depends_on:
+#       - nginx
+#       - database
+#     networks:
+#       default:
+#         ipv4_address: 192.168.0.3
+
+#   database:
+#     image: 'postgresql:latest'
+#     volumes:
+#      - 'database:/var/lib/postgresql/data'
+#      networks:
+#       default:
+#         ipv4_address: 192.168.0.4
+
+# volumes:
+#   database:
+#     driver: local
+#     external: false

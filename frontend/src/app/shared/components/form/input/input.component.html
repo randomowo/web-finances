@@ -1,0 +1,12 @@
+<div class="input-container" [formGroup]="form">
+  <input
+    [type]="type"
+    [formControlName]="name"
+    [placeholder]="placeholder"
+    />
+  <div class="errors-container">
+    <ng-container *ngFor="let error of errors">
+      <span class="inline-error">{{error}}</span>
+    </ng-container>
+  </div>
+</div>

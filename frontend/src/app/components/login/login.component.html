@@ -1,0 +1,11 @@
+<div class="centered container">
+    <div class="title">
+        {{ state }}
+    </div>
+    <form-container
+        [formConfig$]="formConfig$"
+        [saveText]="state"
+        (onSave)="process($event)">
+    </form-container>
+    <button type="button" (click)="toggleState()">{{ oppositeState }}</button>
+</div>
